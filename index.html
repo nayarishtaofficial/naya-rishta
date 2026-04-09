@@ -1,0 +1,71 @@
+<script>
+
+const data = [
+["Ayesha Khan",23,"Lahore","5.4","Single","Teacher"],
+["Sana Malik",24,"Islamabad","5.3","Single","Doctor"],
+["Fatima Noor",22,"Karachi","5.5","Single","Student"],
+["Hira Shah",26,"Multan","5.6","Divorced","Banker"],
+["Areeba Khan",21,"Gujranwala","5.3","Single","Student"],
+["Zainab Ali",27,"Lahore","5.5","Married","Teacher"],
+["Mahnoor Malik",23,"Sialkot","5.4","Single","Housewife"],
+["Hania Rajput",24,"Karachi","5.2","Single","Counselor"],
+["Aiman Sheikh",22,"Lahore","5.4","Single","Freelancer"],
+["Noor Fatima",25,"Islamabad","5.5","Married","Manager"],
+["Sana Khan",23,"Lahore","5.3","Single","Student"],
+["Ayesha Ali",24,"Multan","5.4","Single","Teacher"],
+["Fatima Shah",22,"Karachi","5.5","Single","Student"],
+["Hira Khan",26,"Lahore","5.6","Divorced","Banker"],
+["Zoya Malik",21,"Sialkot","5.2","Single","Student"],
+["Hania Shah",23,"Islamabad","5.3","Single","Freelancer"],
+["Mahnoor Ali",24,"Gujranwala","5.4","Married","Teacher"],
+["Areeba Sheikh",22,"Karachi","5.5","Single","Counselor"],
+["Zainab Khan",25,"Lahore","5.6","Married","Manager"],
+["Noor Khan",23,"Multan","5.4","Single","Private Job"],
+["Sana Malik",24,"Lahore","5.3","Single","Student"],
+["Ayesha Khan",22,"Islamabad","5.4","Single","Freelancer"],
+["Fatima Noor",25,"Karachi","5.5","Divorced","Banker"],
+["Hira Shah",23,"Sialkot","5.4","Single","Teacher"],
+["Zoya Ali",22,"Lahore","5.3","Single","Student"],
+["Areeba Khan",24,"Multan","5.5","Married","Counselor"],
+["Hania Malik",23,"Karachi","5.4","Single","Student"],
+["Mahnoor Khan",25,"Lahore","5.6","Married","Manager"],
+["Zainab Malik",22,"Islamabad","5.3","Single","Freelancer"],
+["Noor Fatima",24,"Gujranwala","5.4","Single","Teacher"],
+["Aliza Shah",23,"Lahore","5.5","Widow","Business"]
+];
+
+let output = "";
+
+data.forEach((p, i) => {
+
+let isPremium = i >= 10; // first 10 free, baqi locked
+
+output += `
+<div class="card">
+
+${isPremium ? `<div style="position:absolute;background:#000000aa;color:#fff;padding:5px 10px;border-radius:8px;margin:10px;">🔒 Premium</div>` : ""}
+
+<img src="img${i+1}.jpg" style="${isPremium ? 'filter:blur(6px);' : ''}">
+
+<div class="content">
+<h3>${isPremium ? "Premium Profile" : p[0]}</h3>
+
+<p><b>Age:</b> ${isPremium ? "Hidden" : p[1]}</p>
+<p><b>City:</b> ${isPremium ? "Hidden" : p[2]}</p>
+<p><b>Height:</b> ${isPremium ? "Hidden" : p[3]}</p>
+<p><b>Status:</b> ${isPremium ? "Hidden" : p[4]}</p>
+<p><b>Profession:</b> ${isPremium ? "Hidden" : p[5]}</p>
+
+<a class="btn" href="https://wa.me/923096979126">
+${isPremium ? "🔓 Unlock on WhatsApp" : "💬 WhatsApp"}
+</a>
+
+</div>
+</div>
+`;
+
+});
+
+document.getElementById("profiles").innerHTML = output;
+
+</script>
